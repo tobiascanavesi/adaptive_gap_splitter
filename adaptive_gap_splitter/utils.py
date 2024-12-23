@@ -1,3 +1,0 @@
-# Put your utility functions here, you might need in the future...
-def dummy_function():
-    pass
