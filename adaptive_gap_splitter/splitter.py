@@ -1,5 +1,3 @@
-# adaptive_gap_splitter/splitter.py
-
 import numpy as np
 
 def percentile_gap_split_1d(data, percentile=95, min_group_size=2):
