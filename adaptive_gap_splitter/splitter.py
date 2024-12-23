@@ -1,3 +1,6 @@
+"""
+splitter.py: Contains functions for splitting data based on adaptive percentile gaps.
+"""
 import numpy as np
 
 def percentile_gap_split_1d(data, percentile=95, min_group_size=2):
