@@ -1,3 +1,5 @@
+# setup.py
+
 from setuptools import setup, find_packages
 
 with open("README.md", "r", encoding="utf-8") as fh:
@@ -25,6 +27,9 @@ setup(
     extras_require={
         "dev": [
             "pytest>=6.0.0",
+            "pylint>=2.12.2",  # Add Pylint here
+            "black>=23.1.0",   # Optional: Code formatter
+            "flake8>=6.0.0",   # Optional: Additional linter
         ],
     },
 )
