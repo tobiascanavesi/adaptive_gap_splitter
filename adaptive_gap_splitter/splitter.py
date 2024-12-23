@@ -1,3 +1,5 @@
+# adaptive_gap_splitter/splitter.py
+
 import numpy as np
 
 def percentile_gap_split_1d(data, percentile=95, min_group_size=2):
@@ -34,7 +36,7 @@ def percentile_gap_split_1d(data, percentile=95, min_group_size=2):
     max_gap_value = gaps[max_gap_idx]
     
     # 5) Compare the largest gap to the threshold
-    if max_gap_value > threshold:
+    if max_gap_value >= threshold and not np.all(gaps == max_gap_value):
         # Split the data at the largest gap
         left_group = data_sorted[:max_gap_idx + 1]
         right_group = data_sorted[max_gap_idx + 1:]
@@ -89,7 +91,7 @@ def percentile_gap_split_multidim(data, percentile=95, min_group_size=2):
     max_gap_value = gaps[max_gap_idx]
     
     # 6) Compare the largest gap to the threshold
-    if max_gap_value > threshold:
+    if max_gap_value >= threshold and not np.all(gaps == max_gap_value):
         # Split the data at the largest gap
         left_group = data_sorted[:max_gap_idx + 1]
         right_group = data_sorted[max_gap_idx + 1:]
